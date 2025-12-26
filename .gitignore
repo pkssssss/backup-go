@@ -1,0 +1,22 @@
+# Binaries
+backup-go
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Logs
+logs/
+*.log
+
+# Temp
+tmp/
+
+# Config (Contains Secrets)
+config/config.toml
+
+# OS & Tools
+.DS_Store
+.serena/
+.idea/
+.vscode/
