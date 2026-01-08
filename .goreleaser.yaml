@@ -10,30 +10,21 @@ before:
 builds:
   - env:
       - CGO_ENABLED=0
+    main: ./cmd/backup-go/main.go
     goos:
       - linux
-      - windows
       - darwin
     goarch:
       - amd64
       - arm64
-    ignore:
-      - goos: windows
-        goarch: arm64
     binary: backup-go
 
 archives:
   - format: tar.gz
-    # Windows 使用 zip 格式
-    format_overrides:
-      - goos: windows
-        format: zip
     name_template: >-
       {{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}
     files:
       - README.md
-      - LICENSE
-      - config/config.toml.example
 
 checksum:
   name_template: 'checksums.txt'
